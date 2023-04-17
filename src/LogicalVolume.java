@@ -1,11 +1,22 @@
 import java.util.ArrayList;
 import java.util.UUID;
-public class LogicalVolume extends LVM {
-    private UUID u;
-    private ArrayList<VolumeGroup> VG;
+public class LogicalVolume extends Storage {
+    private String volumeGroupName;
 
-    public LogicalVolume(String name, int size, UUID u, ArrayList<VolumeGroup> VG) {
-        super(size, name);
+    public LogicalVolume(String name, int storage){
+        super(name, storage);
+    }
 
+    public String getVolumeGroupName() {
+        return volumeGroupName;
+    }
+
+    public void setVolumeGroupName(String volumeGroupName) {
+        this.volumeGroupName = volumeGroupName;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "[" + super.getStorage() + " GB]" + " [" + volumeGroupName + "]";
     }
 }

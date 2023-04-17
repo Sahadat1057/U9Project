@@ -1,15 +1,12 @@
 import java.util.UUID;
-public class PhysicalDrive  {
-    private String UUID;
-    private String name;
-    private int size;
-    private UUID u;
-
-    public PhysicalDrive( UUID u , String name, int size) {
-        this.u = u;
-        this.name = name;
-        this.size = size;
+public class PhysicalDrive extends Storage  {
+    public PhysicalDrive(String name, int storage){
+        super(name, storage);
     }
 
+    @Override
+    public String toString(){
+        return super.toString() + "[" + super.getStorage() + " GB]";
+    }
 
 }
